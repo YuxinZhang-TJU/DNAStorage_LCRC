@@ -14,13 +14,13 @@ The software supports the following core functions:
 ## Source Data
 
 The source data are available on the Sequence Read Archive (SRA) under accession nos. [SRR33980957](https://dataview.ncbi.nlm.nih.gov/object/SRR33980957)–[SRR33980963](https://dataview.ncbi.nlm.nih.gov/object/SRR33980963) (SRA Project [PRJNA1276869](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1276869)), including the Sequencing data generated under different synthesis/sequencing conditions (in FASTQ format):
-(1) HFS-Pool + NGS (PE150)
-(2) HFS-Pool + ONT (FAST base calling)
-(3) HFS-Pool + ONT (FAST base calling) + RT, Nanopore sequencing data for real-time readout verification
-(4) LCS-Pool + NGS (PE150)  
- (5) LCS-Pool + ONT (SUP base calling)
-(6) LCS_D_Pool (Accelerated aging pool) + NGS (PE150)
-(7) HFS_L_DNA (Large DNA fragment) + NGS (PE150)
+1. HFS-Pool + NGS (PE150)
+2. HFS-Pool + ONT (FAST base calling)
+3. HFS-Pool + ONT (FAST base calling) + RT, Nanopore sequencing data for real-time readout verification
+4. LCS-Pool + NGS (PE150)  
+5. LCS-Pool + ONT (SUP base calling)
+6. LCS_D_Pool (Accelerated aging pool) + NGS (PE150)
+7. HFS_L_DNA (Large DNA fragment) + NGS (PE150)
 
 ## Requirements
 
