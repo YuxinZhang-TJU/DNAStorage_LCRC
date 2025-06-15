@@ -1,4 +1,4 @@
-#### From Spacecraft Ranging to Massive DNA Data Storage: Composite Ranging Codes as Indices and Error Correction References
+## From Spacecraft Ranging to Massive DNA Data Storage: Composite Ranging Codes as Indices and Error Correction References
 
 The software implements an accompanying indexing and progressive recovery framework with specialized long composite ranging codes (LCRCs) for massive DNA data storage. The LCRC is constructed from a limited number of short component codes (SCCs) of similar lengths and partitioned to index massive DNA strands and to enable progressive error correction using fast correlation and robust alignment. The software is implemented in C/C++ and runs on Linux.
 The software supports the following core functions:
