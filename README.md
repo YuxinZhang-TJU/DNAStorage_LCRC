@@ -7,15 +7,13 @@ The software supports the following core functions:
 2. Rapid readout from short nanopore reads with read-by-read decoding.
 3. Encoding for data storage with large DNA fragments.
 
-![intro](intro.png){: width="600" height="600" style="display: block; margin: 0 auto;"}
-
-## Content
-
-[TOC]
+<div align="center">
+<img src="intro.png" alt="intro" width="800" />
+</div>
 
 ## Source Data
 
-The source data are available on the Sequence Read Archive (SRA) under accession nos.SRR33980957–SRR33980963 (SRA Project [PRJNA1276869](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1276869)), including the Sequencing data generated under different synthesis/sequencing conditions (in FASTQ format):
+The source data are available on the Sequence Read Archive (SRA) under accession nos. [SRR33980957](https://dataview.ncbi.nlm.nih.gov/object/SRR33980957)–[SRR33980963](https://dataview.ncbi.nlm.nih.gov/object/SRR33980963) (SRA Project [PRJNA1276869](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1276869)), including the Sequencing data generated under different synthesis/sequencing conditions (in FASTQ format):
 (1) HFS-Pool + NGS (PE150)
 (2) HFS-Pool + ONT (FAST base calling)
 (3) HFS-Pool + ONT (FAST base calling) + RT, Nanopore sequencing data for real-time readout verification
@@ -123,14 +121,11 @@ mkdir ${out_dec}
 # Split the FASTQ into subfiles to facilitate multithreading
 ./run_split_fastq.sh ${PEmerged_fastq} ${thread} ${out_dec}/subfastq
 
-# To perform LCRC alignment, users may alternatively run the following command
-# to build index for BWA (optional step):
-IdentificationCons_OligoPool ${out_dec} ${out_dec}/subfastq ${out_dec}/consensus_cw.bin \
-${thread} ${threshold} ${mode} reference/DNA_oligoPool/oligo_pool.fa 1
+# To perform LCRC alignment, users may alternatively run the following command to build index for BWA (optional step):
+IdentificationCons_OligoPool ${out_dec} ${out_dec}/subfastq ${out_dec}/consensus_cw.bin ${thread} ${threshold} ${mode} reference/DNA_oligoPool/oligo_pool.fa 1
 
 # Run primer identification, SCC correlation or LCRC alignment, and bit-wise majority voting
-IdentificationCons_OligoPool ${out_dec} ${out_dec}/subfastq ${out_dec}/consensus_cw.bin \
-${thread} ${threshold} ${mode} reference/DNA_oligoPool/oligo_pool.fa 0
+IdentificationCons_OligoPool ${out_dec} ${out_dec}/subfastq ${out_dec}/consensus_cw.bin ${thread} ${threshold} ${mode} reference/DNA_oligoPool/oligo_pool.fa 0
 
 # Clean off
 rm ${out_dec}/subfastq*
@@ -153,8 +148,7 @@ export PATH=bin:$PATH
 ./mkdir ${out_dec}
 
 # Perform offline readout via read-by-read decoding.
-Decoder_RealTime_Online ${out_dec} ${fastq_prefix} ${thread} \
-${threshold} {mode} ${base_threshold} ${batch_size}
+Decoder_RealTime_Online ${out_dec} ${fastq_prefix} ${thread} ${threshold} {mode} ${base_threshold} ${batch_size}
 ```
 
 - _\${out_dec}_: Output directory for decoder.
